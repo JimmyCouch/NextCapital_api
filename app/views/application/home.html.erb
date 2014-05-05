@@ -1,0 +1,23 @@
+<table class="table table-striped myTable"> 
+  <thead> 
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Complete?</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <%= form_tag("/submit_todo", method: "get") do %>
+    	<% @obj.each do |f| %>
+    		<tr>
+    			<td><%= f["id"] %></td>
+    			<td><%= f["description"] %></td>
+          <td class="finish_state"><%= f["is_complete"] %></td>
+          <td class="state_checkbox" ><input type="checkbox" name="tag_ids[]" value="<%= f %>" /></td>
+    		</tr>
+      <% end %>
+  </tbody>
+</table> 
+  <%= submit_tag("Submit", :class=> "btn btn-primary pull-right") %>
+  <% end %>

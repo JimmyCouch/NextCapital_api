@@ -1,0 +1,16 @@
+<div class="row text-center">
+	<h2>Create a new todo</h2>
+	<hr>
+	<div id="form-div-sign">
+
+		<%= form_tag("/submit_new_todo", method: "post") do %>
+
+	
+		  <%= text_field(:todo, :desc, :class=> 'feedback-input', :placeholder => 'Enter a description') %>
+
+		  <%= submit_tag("Submit",:class => 'btn btn-primary') %>
+		<% end %>
+
+	</div>
+
+</div>

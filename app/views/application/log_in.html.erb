@@ -1,0 +1,23 @@
+
+
+<div class="sign-form row text-center">
+	<h2>Sign In</h2>
+	<hr>
+	<div id="form-div-sign">
+		
+		<%= form_tag("/log_in", method: "post") do %>
+			<div class="email_form feedback-input">
+				<%= text_field_tag(:email, nil,:placeholder => 'Email address' ) %>
+			</div>
+			<div class="password_form feedback-input">
+				<%= password_field_tag(:password, nil,:placeholder => 'Password') %>
+			</div>
+			<div class="submit">
+		<%= submit_tag("Sign In", :id => 'button-blue') %>
+		<div class="ease"></div>
+		<% end %>	
+
+	</div>
+</div>
+
+</div>
