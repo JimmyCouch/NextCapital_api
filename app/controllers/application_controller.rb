@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  require 'net/http'
   before_filter :authenticate, :except => [:log_in]
 
   def authenticate
@@ -38,9 +37,7 @@ class ApplicationController < ActionController::Base
           make_request("Put", hash, "/users/#{id}/todos/#{parameter["id"]}", "submit_checkbox")
         }
     end
-
       redirect_to logged_in_path
-
   end
 
   def log_out
