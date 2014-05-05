@@ -18,21 +18,10 @@
 $(document).ready(function() {
 
     $(".myTable").tableDnD();
-
-
     $('.myTable tr').each(function (i, row) {
             if ($(row).find('td.finish_state').html() == "true"){
             	$(row).css("text-decoration", "line-through");
             	$(row).find('td.state_checkbox [type=checkbox]').hide();
             }
-        });
-
-    $('.submit_checkboxes').on('click', function(){
-
-
-
-
-
-    });
-    
+        });    
 });
